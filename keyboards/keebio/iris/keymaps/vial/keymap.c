@@ -129,3 +129,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
     return false;
 }
+
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [0] =   { ENCODER_CCW_CW(KC_MS_WH_UP, KC_MS_WH_DOWN)},
+    [1] =   { ENCODER_CCW_CW(RGB_HUD, RGB_HUI)},
+    [2] =   { ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
+    [3] =   { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD)},
+    //                  Encoder 1                                     Encoder 2
+};
+#endif
